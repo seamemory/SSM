@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.atguigu.mybatis.mapper.UesrMapper">
+<mapper namespace="com.atguigu.mybatis.mapper.UserMapper">
 
   <insert id="insertUser">
     insert into t_user values (null,'admin','1234560','23','男','163@qq.com')
@@ -18,7 +18,7 @@
       resultType:设置结果类型，即查询的数据要转换成的java类型
       resultMap:自定义映射，处理一对一和一对多的映射
   -->
-  <select id="getUserById" resultType="com.atguigu.mybatis.pojo.User">
+  <select id="getUserById" resultType="User">
     select * from t_user where id = 2
   </select>
 </mapper>

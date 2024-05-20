@@ -1,6 +1,6 @@
 package com.atguigu.mybatis.test;
 
-import com.atguigu.mybatis.mapper.UesrMapper;
+import com.atguigu.mybatis.mapper.UserMapper;
 import com.atguigu.mybatis.pojo.User;
 import com.atguigu.mybatis.utils.SqlSessionUtil;
 import org.apache.ibatis.io.Resources;
@@ -32,7 +32,7 @@ public class MybatisTest {
         // 获取sql的会话对象SqlSession,是Mybatis提供的操作数据库的对象
         SqlSession sqlSession = sqlSessionFactory.openSession();
         // 获取UserMapper的代理实现类对象
-        UesrMapper mapper = sqlSession.getMapper(UesrMapper.class);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         // 调用mapper接口中的方法，实现添加用户信息的功能
         int result = mapper.insertUser();
         System.out.println("结果：" + result);
@@ -46,7 +46,7 @@ public class MybatisTest {
     @Test
     public void testUpdate(){
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
-        UesrMapper mapper = sqlSession.getMapper(UesrMapper.class);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         int i = mapper.updateUser();
         System.out.println("结果： " + i);
         sqlSession.close();
@@ -55,7 +55,7 @@ public class MybatisTest {
     @Test
     public void testDelete(){
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
-        UesrMapper mapper = sqlSession.getMapper(UesrMapper.class);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         int i = mapper.deleteUser();
         System.out.println("结果： " + i);
         sqlSession.close();
@@ -64,7 +64,7 @@ public class MybatisTest {
     @Test
     public void testSelect(){
         SqlSession sqlSession = SqlSessionUtil.getSqlSession();
-        UesrMapper mapper = sqlSession.getMapper(UesrMapper.class);
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         User user = mapper.getUserById();
         System.out.println("user = " + user);
         sqlSession.close();
