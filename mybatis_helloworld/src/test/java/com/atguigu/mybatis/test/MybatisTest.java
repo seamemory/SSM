@@ -1,6 +1,8 @@
 package com.atguigu.mybatis.test;
 
 import com.atguigu.mybatis.mapper.UesrMapper;
+import com.atguigu.mybatis.pojo.User;
+import com.atguigu.mybatis.utils.SqlSessionUtil;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -39,5 +41,32 @@ public class MybatisTest {
         // 关闭
         sqlSession.close();
 
+    }
+
+    @Test
+    public void testUpdate(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        UesrMapper mapper = sqlSession.getMapper(UesrMapper.class);
+        int i = mapper.updateUser();
+        System.out.println("结果： " + i);
+        sqlSession.close();
+    }
+
+    @Test
+    public void testDelete(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        UesrMapper mapper = sqlSession.getMapper(UesrMapper.class);
+        int i = mapper.deleteUser();
+        System.out.println("结果： " + i);
+        sqlSession.close();
+    }
+
+    @Test
+    public void testSelect(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        UesrMapper mapper = sqlSession.getMapper(UesrMapper.class);
+        User user = mapper.getUserById();
+        System.out.println("user = " + user);
+        sqlSession.close();
     }
 }
