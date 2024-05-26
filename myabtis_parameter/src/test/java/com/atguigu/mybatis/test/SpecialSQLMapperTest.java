@@ -25,4 +25,12 @@ public class SpecialSQLMapperTest {
         List<User> list = mapper.getUserByFuzzy("a");
         list.forEach(System.out::println);
     }
+
+    @Test
+    public void deleteMoreUser(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SpecialSQLMapper mapper = sqlSession.getMapper(SpecialSQLMapper.class);
+        mapper.deleteMoreUser("6,7");
+
+    }
 }

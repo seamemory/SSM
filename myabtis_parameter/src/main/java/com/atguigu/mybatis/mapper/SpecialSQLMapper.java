@@ -18,4 +18,9 @@ public interface SpecialSQLMapper {
      * 通过用户名魔术查询
      */
     List<User> getUserByFuzzy(@Param("fuzzy") String fuzzy);
+
+    /**
+     * 批量删除
+     */
+    void deleteMoreUser(@Param("ids") String ids);
 }
