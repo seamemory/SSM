@@ -41,4 +41,13 @@ public class SpecialSQLMapperTest {
         List<User> list = mapper.getUserList("t_user");
         list.forEach(System.out::println);
     }
+
+    @Test
+    public void insertUser(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SpecialSQLMapper mapper = sqlSession.getMapper(SpecialSQLMapper.class);
+        User user = new User(null, "hmm", "123456", 18, "女", "951@163.com");
+        mapper.insertUser(user);
+
+    }
 }
