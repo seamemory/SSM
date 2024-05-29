@@ -10,4 +10,8 @@
   <delete id="deleteMoreUser">
     delete from t_user where id in (${ids})
   </delete>
+
+  <select id="getUserList" resultType="User">
+    select * from ${tableName}
+  </select>
 </mapper>

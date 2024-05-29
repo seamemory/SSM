@@ -33,4 +33,12 @@ public class SpecialSQLMapperTest {
         mapper.deleteMoreUser("6,7");
 
     }
+
+    @Test
+    public void getUserList(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        SpecialSQLMapper mapper = sqlSession.getMapper(SpecialSQLMapper.class);
+        List<User> list = mapper.getUserList("t_user");
+        list.forEach(System.out::println);
+    }
 }
