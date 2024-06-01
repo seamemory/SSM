@@ -23,4 +23,6 @@ public class Emp {
     private Integer age;
 
     private String gender;
+
+    private Dept dept;
 }
