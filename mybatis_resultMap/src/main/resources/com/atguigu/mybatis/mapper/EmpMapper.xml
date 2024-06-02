@@ -65,8 +65,9 @@
     <!--
       select:设置分步查询的sql的唯一标识
       column:将查询出来的某个字段作为分步查询的sql的条件
+      fetchType: 在开启延迟加载后，可指定当前的分布查询是否使用延迟加载，eager为立即加载，lazy为延迟加载
     -->
-    <association property="dept" select="com.atguigu.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo" column="dept_id">
+    <association property="dept" fetchType="lazy" select="com.atguigu.mybatis.mapper.DeptMapper.getEmpAndDeptByStepTwo" column="dept_id">
     </association>
   </resultMap>
   <select id="getEmpAndDeptByStepOne" resultMap="empAndDeptByStepResultMap">
