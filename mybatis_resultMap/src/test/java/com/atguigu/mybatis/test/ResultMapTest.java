@@ -1,6 +1,8 @@
 package com.atguigu.mybatis.test;
 
+import com.atguigu.mybatis.mapper.DeptMapper;
 import com.atguigu.mybatis.mapper.EmpMapper;
+import com.atguigu.mybatis.pojo.Dept;
 import com.atguigu.mybatis.pojo.Emp;
 import com.atguigu.mybatis.utils.SqlSessionUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -37,5 +39,21 @@ public class ResultMapTest {
         EmpMapper mapper = sqlSession.getMapper(EmpMapper.class);
         Emp emp = mapper.getEmpAndDeptByStepOne(1);
         System.out.println("emp = " + emp);
+    }
+
+    @Test
+    public void deptAndEmpResultMap(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+        Dept dept = mapper.getDeptAndEmpByDeptId(1);
+        System.out.println("dept = " + dept);
+    }
+
+    @Test
+    public void getDeptAndEmpByStep(){
+        SqlSession sqlSession = SqlSessionUtil.getSqlSession();
+        DeptMapper mapper = sqlSession.getMapper(DeptMapper.class);
+        Dept dept = mapper.getDeptAndEmpByStepOne(1);
+        System.out.println("dept = " + dept);
     }
 }
