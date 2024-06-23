@@ -45,7 +45,7 @@
     prefixOverrides、suffixOverrides：在标签中内容的前面或后面删除指定内容
   -->
   <select id="getEmpByCondition" resultType="emp">
-    select * from t_emp
+    select <include refid="empColumns"> </include>from t_emp
     <trim prefix="where" suffixOverrides="and">
       <if test="empName != null and empName != ''">
         emp_name = #{empName} and
@@ -109,5 +109,12 @@
       emp_id = #{empId}
     </foreach>
   </delete>
+
+  <!--
+    sql片段，可以记录一段sql，在需要的地方使用include标签进行引用
+  -->
+  <sql id="empColumns">
+    emp_id,emp_name,age,gender,dept_id
+  </sql>
 
 </mapper>
