@@ -60,4 +60,26 @@
 
   </select>
 
+  <!--
+    choose、when、otherwise
+    相当于java中的if...else if...else
+    when至少设置一个，otherwise最多设置一个
+  -->
+  <select id="getEmpByChoose" resultType="emp">
+    select * from t_emp
+    <where>
+      <choose>
+        <when test="empName != null and empName != ''">
+          emp_name = #{empName}
+        </when>
+        <when test="age != null and age != ''">
+          age = #{age}
+        </when>
+        <when test="gender != null and gender != ''">
+          gender =#{gender}
+        </when>
+      </choose>
+    </where>
+  </select>
+
 </mapper>
