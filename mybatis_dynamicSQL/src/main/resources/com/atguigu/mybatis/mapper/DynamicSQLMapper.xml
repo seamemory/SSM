@@ -2,17 +2,40 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.atguigu.mybatis.mapper.DynamicSQLMapper">
 
-  <select id="getEmpByCondition" resultType="emp">
-    select * from t_emp where
+  <select id="getEmpByConditionOne" resultType="emp">
+    select * from t_emp where 1=1
     <if test="empName != null and empName != ''">
-      emp_name = #{empName}
+      and emp_name = #{empName}
     </if>
     <if test="age != null and age != ''">
-    and age = #{age}
+     and age = #{age}
     </if>
     <if test="gender != null and gender != ''">
       and gender =#{gender}
     </if>
+  </select>
+
+  <!--使用where动态标签-->
+  <!--
+    where
+    1.若where标签中俄条件成立，会生成where关键字
+    2.会自动将where标签中内容前多余的and去掉
+    3.若where标签中没有任何一个条件成立，则where没有任何作用
+  -->
+  <select id="getEmpByCondition" resultType="emp">
+    select * from t_emp
+    <where>
+      <if test="empName != null and empName != ''">
+        emp_name = #{empName}
+      </if>
+      <if test="age != null and age != ''">
+        and age = #{age}
+      </if>
+      <if test="gender != null and gender != ''">
+        and gender =#{gender}
+      </if>
+    </where>
+
   </select>
 
 </mapper>

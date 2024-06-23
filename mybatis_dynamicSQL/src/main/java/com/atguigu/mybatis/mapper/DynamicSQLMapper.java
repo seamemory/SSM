@@ -18,5 +18,5 @@ public interface DynamicSQLMapper {
      * @param emp
      * @return
      */
-    List<Emp> getEmpByCondition(Emp emp);
-}
+             List<Emp> getEmpByCondition(Emp emp);
+        }
