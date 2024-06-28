@@ -5,4 +5,8 @@
   <select id="getEmpById" resultType="Emp">
     select * from t_emp where emp_id = #{empId}
   </select>
+
+  <select id="selectAllEmp" resultType="Emp">
+    select * from t_emp
+  </select>
 </mapper>

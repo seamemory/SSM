@@ -3,6 +3,8 @@ package com.atguigu.mybatis.mapper;
 import com.atguigu.mybatis.pojo.Emp;
 import org.apache.ibatis.annotations.Param;
 
+import java.util.List;
+
 /**
  * @author ZJ
  * @ClassName CacheMapper
@@ -18,4 +20,6 @@ public interface CacheMapper {
      * @return
      */
     Emp getEmpById(@Param("empId") Integer empId);
+
+    List<Emp> selectAllEmp();
 }
