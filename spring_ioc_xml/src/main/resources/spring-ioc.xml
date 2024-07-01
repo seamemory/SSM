@@ -27,4 +27,13 @@
     <constructor-arg value="女"></constructor-arg>
   </bean>
 
+  <bean id="studentFour" class="com.atguigu.spring.pojo.Student">
+    <property name="sid" value="1001"></property>
+    <property name="sname" value="张三"></property>
+    <property name="age" value="23"></property>
+    <property name="gender"> <!--可以通过null标签，对gender属性赋空值-->
+      <null></null>
+    </property>
+  </bean>
+
 </beans>
