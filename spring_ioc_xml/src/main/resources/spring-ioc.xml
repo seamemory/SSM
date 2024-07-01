@@ -17,4 +17,14 @@
     <property name="gender" value="男"></property>
   </bean>
 
+  <!--
+    构造器注入
+  -->
+  <bean id="studentThree" class="com.atguigu.spring.pojo.Student">
+    <constructor-arg value="1002"></constructor-arg>
+    <constructor-arg value="李四"></constructor-arg>
+    <constructor-arg value="25" name="age"></constructor-arg>
+    <constructor-arg value="女"></constructor-arg>
+  </bean>
+
 </beans>
