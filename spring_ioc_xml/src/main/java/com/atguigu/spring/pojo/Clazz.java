@@ -7,24 +7,18 @@ import lombok.ToString;
 
 /**
  * @author ZJ
- * @ClassName Student
+ * @ClassName Clazz
  * @Description TODO
- * @date 2024/6/30 16:37
+ * @date 2024/7/1 21:49
  * @Version 1.0
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
-public class Student implements Person{
+public class Clazz {
 
-    private Integer sid;
+    private Integer cid;
 
-    private String sname;
-
-    private Integer age;
-
-    private String gender;
-
-    private Clazz clazz;
+    private String cname;
 }

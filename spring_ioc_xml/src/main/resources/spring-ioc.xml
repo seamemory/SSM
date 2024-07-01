@@ -20,12 +20,12 @@
   <!--
     构造器注入
   -->
-  <bean id="studentThree" class="com.atguigu.spring.pojo.Student">
+  <!--<bean id="studentThree" class="com.atguigu.spring.pojo.Student">
     <constructor-arg value="1002"></constructor-arg>
     <constructor-arg value="李四"></constructor-arg>
     <constructor-arg value="25" name="age"></constructor-arg>
     <constructor-arg value="女"></constructor-arg>
-  </bean>
+  </bean>-->
 
   <bean id="studentFour" class="com.atguigu.spring.pojo.Student">
     <property name="sid" value="1001"></property>
@@ -34,6 +34,20 @@
     <property name="gender"> <!--可以通过null标签，对gender属性赋空值-->
       <null></null>
     </property>
+  </bean>
+
+  <bean id="studentFive" class="com.atguigu.spring.pojo.Student">
+    <property name="sid" value="1004"></property>
+    <property name="sname" value="王五"></property>
+    <property name="age" value="23"></property>
+    <property name="gender" value="男"></property>
+    <!--ref:引用IOC容器中的某个bean的id-->
+    <property name="clazz" ref="clazzOne"></property>
+  </bean>
+
+  <bean id="clazzOne" class="com.atguigu.spring.pojo.Clazz">
+    <property name="cid" value="1001"></property>
+    <property name="cname" value="班级"></property>
   </bean>
 
 </beans>
