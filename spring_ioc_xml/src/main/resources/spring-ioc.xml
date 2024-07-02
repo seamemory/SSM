@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
   <bean id="studentOne" class="com.atguigu.spring.pojo.Student"></bean>
@@ -81,5 +81,7 @@
     <property name="tid" value="1001"></property>
     <property name="tname" value="小宝宝"></property>
   </bean>
+
+  <bean id="studentSix" class="com.atguigu.spring.pojo.Student" p:sid="1005" p:sname="小红"></bean>
 
 </beans>
