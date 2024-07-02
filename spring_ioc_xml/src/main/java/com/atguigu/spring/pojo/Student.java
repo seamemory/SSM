@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.Map;
+
 /**
  * @author ZJ
  * @ClassName Student
@@ -29,4 +31,6 @@ public class Student implements Person{
     private String[] hobby;
 
     private Clazz clazz;
+
+    private Map<String,Teacher> teacherMap;
 }

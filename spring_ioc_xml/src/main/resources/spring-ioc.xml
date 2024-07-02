@@ -52,6 +52,12 @@
         <value>乐</value>
       </array>
     </property>
+    <property name="teacherMap">
+      <map>
+        <entry key="1000" value-ref="teacherOne"></entry>
+        <entry key="1001" value-ref="teacherTwo"></entry>
+      </map>
+    </property>
   </bean>
 
   <bean id="clazzOne" class="com.atguigu.spring.pojo.Clazz">
@@ -64,6 +70,16 @@
         <ref bean="studentFour"></ref>
       </list>
     </property>
+  </bean>
+
+  <bean id="teacherOne" class="com.atguigu.spring.pojo.Teacher">
+    <property name="tid" value="1000"></property>
+    <property name="tname" value="小宝"></property>
+  </bean>
+
+  <bean id="teacherTwo" class="com.atguigu.spring.pojo.Teacher">
+    <property name="tid" value="1001"></property>
+    <property name="tname" value="小宝宝"></property>
   </bean>
 
 </beans>

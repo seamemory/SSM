@@ -82,4 +82,16 @@ public class IOCByXMLTest {
         Clazz clazz = ioc.getBean("clazzOne", Clazz.class);
         System.out.println("Clazz = " + clazz);
     }
+
+    /**
+     * map测试
+     */
+    @Test
+    public void testDIMap(){
+        // 获取IOC容器
+        ApplicationContext ioc = new ClassPathXmlApplicationContext("spring-ioc.xml");
+        // 获取bean
+        Student studentFive = ioc.getBean("studentFive", Student.class);
+        System.out.println("studentFive = " + studentFive);
+    }
 }
