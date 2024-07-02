@@ -26,5 +26,7 @@ public class Student implements Person{
 
     private String gender;
 
+    private String[] hobby;
+
     private Clazz clazz;
 }

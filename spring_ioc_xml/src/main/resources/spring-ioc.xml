@@ -43,6 +43,15 @@
     <property name="gender" value="男"></property>
     <!--ref:引用IOC容器中的某个bean的id-->
     <property name="clazz" ref="clazzOne"></property>
+    <!--数组类型赋值-->
+    <property name="hobby">
+      <array>
+        <value>吃</value>
+        <value>喝</value>
+        <value>玩</value>
+        <value>乐</value>
+      </array>
+    </property>
   </bean>
 
   <bean id="clazzOne" class="com.atguigu.spring.pojo.Clazz">
