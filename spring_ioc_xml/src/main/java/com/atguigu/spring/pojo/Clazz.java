@@ -5,6 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * @author ZJ
  * @ClassName Clazz
@@ -21,4 +23,6 @@ public class Clazz {
     private Integer cid;
 
     private String cname;
+
+    private List<Student> students;
 }

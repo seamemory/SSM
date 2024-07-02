@@ -57,6 +57,13 @@
   <bean id="clazzOne" class="com.atguigu.spring.pojo.Clazz">
     <property name="cid" value="1001"></property>
     <property name="cname" value="班级"></property>
+    <property name="students">
+      <list>
+        <ref bean="studentOne"></ref>
+        <ref bean="studentTwo"></ref>
+        <ref bean="studentFour"></ref>
+      </list>
+    </property>
   </bean>
 
 </beans>
