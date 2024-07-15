@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+      scope:设置bean的作用域
+      singleton（单例）：表示获取该bean所对应的对象都是一个
+      prototype（多例）：表示获取的bean所对应的对象不是同一个
+      如果是在WebApplicationContext环境下还会有另外两个作用域（但不常用）
+      request：在一个请求范围内有效
+      session：在一个会话范围内有效
+    -->
+    <bean id="student" class="com.atguigu.spring.pojo.Student" scope="prototype">
+      <property name="sid" value="1001"></property>
+      <property name="sname" value="zhangsan"></property>
+    </bean>
+</beans>
